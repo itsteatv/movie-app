@@ -1,4 +1,4 @@
-function MovieCard({ movie, favoritesList, onHandleFavorites, onHandleRemoveFavorites }) {
+function MovieCard({ movie, onHandleFavorites, onHandleRemoveFavorites }) {
   const hasPoster = movie.Poster !== "N/A";
 
   return (

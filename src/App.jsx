@@ -3,7 +3,7 @@ import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
 import SearchInput from "./components/SearchInput/SearchInput";
 import MovieCard from "./components/MovieCard";
 import ScrollToTop from "./components/Scroll/ScrollToTop";
-import AddFavorites from "./components/Favorites/AddFavorites";
+// import AddFavorites from "./components/Favorites/AddFavorites";
 import RemoveFavorites from "./components/Favorites/RemoveFavorites";
 import { FaSearch } from "react-icons/fa";
 import "./App.css";
@@ -14,10 +14,10 @@ function App() {
   const [search, setSearch] = useState("");
   console.log(movies);
 
-  const movieApiUrl = process.env.REACT_APP_MOVIE_API;
+  const API_KEY = "https://www.omdbapi.com/?i=tt3896198&apikey=1a97d8e2";
 
   const searchMovies = async function (title) {
-    const response = await fetch(`${movieApiUrl}&s=${title}`);
+    const response = await fetch(`${API_KEY}&s=${title}`);
     const data = await response.json();
     setMovies(data.Search);
   };
@@ -111,8 +111,8 @@ function App() {
                   <MovieCard
                     movie={favorite}
                     key={index}
-                    favoritesList={onHandleFavorites}
-                    onHandleRemoveFavorites={onHandleRemoveFavorites}
+favoritesList={onHandleFavorites}
+    onHandleRemoveFavorites={onHandleRemoveFavorites}
                   />
                 </>
               ))}
