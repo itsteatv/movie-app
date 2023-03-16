@@ -35,14 +35,6 @@ function App() {
     delaySearch(1000);
   }, [search]);
 
-  // useEffect(() => {
-  //   const getLocalStorage = JSON.parse(localStorage.getItem("favorite-movies"));
-  //   setFavorites(getLocalStorage);
-  // }, []);
-
-  // const saveToLocalStorage = function (items) {
-  //   localStorage.setItem("favorite-movies", JSON.stringify(items));
-  // };
 
   const inputChangeHandler = function (e) {
     setSearch(e.target.value);
@@ -62,7 +54,6 @@ function App() {
     }
     const favoritesList = [...favorites, movie];
     setFavorites(favoritesList);
-    // saveToLocalStorage(favoritesList);
   };
 
   const onHandleRemoveFavorites = function (movie) {
@@ -70,7 +61,6 @@ function App() {
       (favorite) => favorite.imdbID !== movie.imdbID
     );
     setFavorites(newFavoriteList);
-    // saveToLocalStorage(newFavoriteList);
   };
 
   return (
