@@ -3,7 +3,6 @@ import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
 import SearchInput from "./components/SearchInput/SearchInput";
 import MovieCard from "./components/MovieCard";
 import ScrollToTop from "./components/Scroll/ScrollToTop";
-import RemoveFavorites from "./components/Favorites/RemoveFavorites";
 import { FaSearch } from "react-icons/fa";
 import "./App.css";
 
@@ -89,7 +88,6 @@ function App() {
                 movie={movie}
                 key={index}
                 onHandleFavorites={onHandleFavorites}
-                onHandleRemoveFavorites={RemoveFavorites}
               />
             ))}
           </div>
@@ -102,7 +100,7 @@ function App() {
           {favorites?.length > 0 && (
             <div className="favorites-container">
               <h1>favorites</h1>
-              {favorites.map((favorite, index) => (
+              {favorites.map((favorite) => (
                 <>
                   <MovieCard
                     movie={favorite}

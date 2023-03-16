@@ -1,3 +1,5 @@
+import "./MovieCard.css";
+
 function MovieCard({ movie, onHandleFavorites, onHandleRemoveFavorites }) {
   const hasPoster = movie.Poster !== "N/A";
 
@@ -20,8 +22,7 @@ function MovieCard({ movie, onHandleFavorites, onHandleRemoveFavorites }) {
       <div className="movie-container">
         <div className="movie-type">
           {movie.Type}
-          <div onClick={() => onHandleFavorites(movie)}>❤️</div>
-          <div onClick={() => onHandleRemoveFavorites(movie)}>🗑️</div>
+          {/* <div onClick={() => onHandleFavorites(movie)}>❤️</div> */}
         </div>
         <div className="movie-title">{movie.Title}</div>
       </div>
