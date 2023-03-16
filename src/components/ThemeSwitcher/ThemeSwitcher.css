@@ -1,0 +1,39 @@
+.btn-container {
+  display: flex;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999999;
+}
+
+.btns {
+  display: flex;
+  gap: 1em;
+  scale: 1.25;
+}
+
+.button {
+  display: flex;
+  transition: 0.3s;
+  padding: 0.75rem;
+  height: 1.75rem;
+  cursor: pointer;
+  margin-top: 0.25rem;
+  background-color: hsl(var(--accent--light));
+  color: hsl(var(--bg--light));
+  border: #fff;
+  border-radius: 0.25rem;
+  font-weight: 700;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover,
+button:focus {
+  background-color: hsl(var(--accent--light) / 0.7);
+  box-shadow: 0 0 0 hsl(var(--accent--light) / 0.3), 0 0 0 -0.1em hsl(var(--bg)),
+    0 0 0 -0.2em hsl(var(--accent));
+}
