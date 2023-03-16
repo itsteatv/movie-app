@@ -12,6 +12,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [search, setSearch] = useState("");
+  console.log(movies);
 
   const API_KEY = "https://www.omdbapi.com/?i=tt3896198&apikey=1a97d8e2";
 
@@ -91,8 +92,8 @@ function App() {
               <MovieCard
                 movie={movie}
                 key={index}
-                favoritesList={onHandleFavorites}
-                removeFavoritesList={onHandleRemoveFavorites}
+                onHandleFavorites={onHandleFavorites}
+                onHandleRemoveFavorites={RemoveFavorites}
               />
             ))}
           </div>
@@ -111,7 +112,7 @@ function App() {
                     movie={favorite}
                     key={index}
                     favoritesList={onHandleFavorites}
-                    removeFavoritesList={onHandleRemoveFavorites}
+                    onHandleRemoveFavorites={onHandleRemoveFavorites}
                   />
                 </>
               ))}
