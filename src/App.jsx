@@ -11,7 +11,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [search, setSearch] = useState("");
-  console.log(movies);
+  console.log(favorites);
 
   const API_KEY = "https://www.omdbapi.com/?i=tt3896198&apikey=1a97d8e2";
 
@@ -35,14 +35,14 @@ function App() {
     delaySearch(1000);
   }, [search]);
 
-  useEffect(() => {
-    const getLocalStorage = JSON.parse(localStorage.getItem("favorite-movies"));
-    setFavorites(getLocalStorage);
-  }, []);
+  // useEffect(() => {
+  //   const getLocalStorage = JSON.parse(localStorage.getItem("favorite-movies"));
+  //   setFavorites(getLocalStorage);
+  // }, []);
 
-  const saveToLocalStorage = function (items) {
-    localStorage.setItem("favorite-movies", JSON.stringify(items));
-  };
+  // const saveToLocalStorage = function (items) {
+  //   localStorage.setItem("favorite-movies", JSON.stringify(items));
+  // };
 
   const inputChangeHandler = function (e) {
     setSearch(e.target.value);
@@ -55,7 +55,7 @@ function App() {
   const onHandleFavorites = function (movie) {
     const favoritesList = [...favorites, movie];
     setFavorites(favoritesList);
-    saveToLocalStorage(favoritesList);
+    // saveToLocalStorage(favoritesList);
   };
 
   const onHandleRemoveFavorites = function (movie) {
@@ -63,7 +63,7 @@ function App() {
       (favorite) => favorite.imdbID !== movie.imdbID
     );
     setFavorites(newFavoriteList);
-    saveToLocalStorage(newFavoriteList);
+    // saveToLocalStorage(newFavoriteList);
   };
 
   return (
