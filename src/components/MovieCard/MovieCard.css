@@ -1,0 +1,10 @@
+.add-to-favorites {
+  position: absolute;
+  right: 2rem;
+  top: 2.5rem;
+}
+
+.remove-favorites {
+  position: absolute;
+  right: 2rem;
+}

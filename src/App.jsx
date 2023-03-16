@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
 import SearchInput from "./components/SearchInput/SearchInput";
-import MovieCard from "./components/MovieCard";
+import MovieCard from "./components/MovieCard/MovieCard";
 import ScrollToTop from "./components/Scroll/ScrollToTop";
 import { FaSearch } from "react-icons/fa";
 import "./App.css";
@@ -33,7 +33,6 @@ function App() {
   useEffect(() => {
     delaySearch(1000);
   }, [search]);
-
 
   const inputChangeHandler = function (e) {
     setSearch(e.target.value);
@@ -100,7 +99,7 @@ function App() {
           {favorites?.length > 0 && (
             <div className="favorites-container">
               <h1>favorites</h1>
-              {favorites.map((favorite) => (
+              {favorites.map((favorite, index) => (
                 <>
                   <MovieCard
                     movie={favorite}

@@ -22,7 +22,8 @@ function MovieCard({ movie, onHandleFavorites, onHandleRemoveFavorites }) {
       <div className="movie-container">
         <div className="movie-type">
           {movie.Type}
-          {/* <div onClick={() => onHandleFavorites(movie)}>❤️</div> */}
+          <div className="add-to-favorites" onClick={() => onHandleFavorites(movie)}>❤️</div>
+          <div className="remove-favorites" onClick={() => onHandleRemoveFavorites(movie)}>🗑️</div>
         </div>
         <div className="movie-title">{movie.Title}</div>
       </div>
