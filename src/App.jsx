@@ -91,8 +91,8 @@ function App() {
               <MovieCard
                 movie={movie}
                 key={index}
-                favorites={AddFavorites}
                 favoritesList={onHandleFavorites}
+                removeFavoritesList={onHandleRemoveFavorites}
               />
             ))}
           </div>
@@ -110,8 +110,8 @@ function App() {
                   <MovieCard
                     movie={favorite}
                     key={index}
-                    favorites={RemoveFavorites}
-                    favoritesList={onHandleRemoveFavorites}
+                    favoritesList={onHandleFavorites}
+                    removeFavoritesList={onHandleRemoveFavorites}
                   />
                 </>
               ))}

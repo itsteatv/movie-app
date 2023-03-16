@@ -1,4 +1,4 @@
-function MovieCard({ movie, favorites, favoritesList }) {
+function MovieCard({ movie, favorites, favoritesList, removeFavoritesList }) {
   const hasPoster = movie.Poster !== "N/A";
 
   return (
@@ -20,7 +20,10 @@ function MovieCard({ movie, favorites, favoritesList }) {
       <div className="movie-container">
         <div className="movie-type">
           {movie.Type}
-          <div onClick={() => favoritesList(movie)}>{favorites()}</div>
+          <div onClick={() => favoritesList(movie)}>Add to favorites</div>
+          <div onClick={() => removeFavoritesList(movie)}>
+            Remove from favorites
+          </div>
         </div>
         <div className="movie-title">{movie.Title}</div>
       </div>
