@@ -53,6 +53,13 @@ function App() {
   };
 
   const onHandleFavorites = function (movie) {
+    // Check if movie is already in favorites
+    const isFavorite = favorites.some(
+      (favorite) => favorite.imdbID === movie.imdbID
+    );
+    if (isFavorite) {
+      return;
+    }
     const favoritesList = [...favorites, movie];
     setFavorites(favoritesList);
     // saveToLocalStorage(favoritesList);
