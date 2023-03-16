@@ -109,7 +109,7 @@ function App() {
                 <>
                   <MovieCard
                     movie={favorite}
-                    key={index}
+                    key={favorite.imdbID}
                     onHandleFavorites={onHandleFavorites}
                     onHandleRemoveFavorites={onHandleRemoveFavorites}
                   />
