@@ -103,7 +103,7 @@ function App() {
           </div>
         )}
         <>
-          {movies?.length > 0 && (
+          {favorites?.length > 0 && (
             <div className="favorites-container">
               <h1>favorites</h1>
               {favorites.map((favorite, index) => (
