@@ -14,10 +14,10 @@ function App() {
   const [search, setSearch] = useState("");
   console.log(movies);
 
-  const API_KEY = "https://www.omdbapi.com/?i=tt3896198&apikey=1a97d8e2";
+  const movieApiUrl = process.env.REACT_APP_MOVIE_API;
 
   const searchMovies = async function (title) {
-    const response = await fetch(`${API_KEY}&s=${title}`);
+    const response = await fetch(`${movieApiUrl}&s=${title}`);
     const data = await response.json();
     setMovies(data.Search);
   };
