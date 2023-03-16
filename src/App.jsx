@@ -3,7 +3,6 @@ import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
 import SearchInput from "./components/SearchInput/SearchInput";
 import MovieCard from "./components/MovieCard";
 import ScrollToTop from "./components/Scroll/ScrollToTop";
-// import AddFavorites from "./components/Favorites/AddFavorites";
 import RemoveFavorites from "./components/Favorites/RemoveFavorites";
 import { FaSearch } from "react-icons/fa";
 import "./App.css";
@@ -111,8 +110,8 @@ function App() {
                   <MovieCard
                     movie={favorite}
                     key={index}
-favoritesList={onHandleFavorites}
-    onHandleRemoveFavorites={onHandleRemoveFavorites}
+                    onHandleFavorites={onHandleFavorites}
+                    onHandleRemoveFavorites={onHandleRemoveFavorites}
                   />
                 </>
               ))}
