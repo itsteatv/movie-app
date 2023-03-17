@@ -132,9 +132,11 @@ body {
 h1 {
   font-size: var(--font-size-fluid-3);
   letter-spacing: 0.9px;
-  background: linear-gradient(90deg,
-      hsl(var(--accent--light)) 0%,
-      rgb(0, 106, 255) 100%);
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent--light)) 0%,
+    rgb(0, 106, 255) 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -187,7 +189,6 @@ h1 {
   flex-wrap: wrap;
   opacity: 0.1;
   font-size: var(--font-size-fluid-1);
-  ;
   color: hsl(var(--accent));
 }
 
@@ -275,9 +276,11 @@ h1 {
   margin-top: 3rem;
   font-size: var(--font-size-fluid-3);
   letter-spacing: 0.9px;
-  background: linear-gradient(90deg,
-      hsl(var(--accent--light)) 0%,
-      rgb(0, 106, 255) 100%);
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent--light)) 0%,
+    rgb(0, 106, 255) 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -293,8 +296,6 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
 }
-
-
 
 /* rem and em do NOT  depend on html font-size in media queries !
 Instead, 1rem = 1em = 16px */
