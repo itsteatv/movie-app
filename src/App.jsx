@@ -34,6 +34,25 @@ function App() {
     delaySearch(1000);
   }, [search]);
 
+  useEffect(() => {
+    try {
+      const getLocalStorage = JSON.parse(
+        localStorage.getItem("favorite-movies"));
+        setFavorites(getLocalStorage || [])
+    } catch (error) {
+      console.log("Error for accessing LocalStorage (Cry Harder 😭)", error);
+    }
+  }, []);
+
+  const saveToLocalStorage = function (items) {
+    try {
+      localStorage.setItem("favorite-movies", JSON.stringify(items))
+    }
+    catch (error) {
+      console.log("Error for accessing LocalStorage (Cry Harder 😭)", error)
+    }
+  }
+
   const inputChangeHandler = function (e) {
     setSearch(e.target.value);
   };
@@ -52,6 +71,7 @@ function App() {
     }
     const favoritesList = [...favorites, movie];
     setFavorites(favoritesList);
+    saveToLocalStorage(favoritesList)
   };
 
   const onHandleRemoveFavorites = function (movie) {
@@ -59,6 +79,7 @@ function App() {
       (favorite) => favorite.imdbID !== movie.imdbID
     );
     setFavorites(newFavoriteList);
+    saveToLocalStorage(newFavoriteList);
   };
 
   return (
@@ -82,10 +103,10 @@ function App() {
 
         {movies?.length > 0 ? (
           <div className="container">
-            {movies.map((movie, index) => (
+            {movies.map((movie) => (
               <MovieCard
                 movie={movie}
-                key={index}
+                key={movie.imdbID}
                 onHandleFavorites={onHandleFavorites}
               />
             ))}
@@ -99,7 +120,7 @@ function App() {
           {favorites?.length > 0 && (
             <div className="favorites-container">
               <h1>favorites</h1>
-              {favorites.map((favorite, index) => (
+              {favorites.map((favorite) => (
                 <>
                   <MovieCard
                     movie={favorite}
