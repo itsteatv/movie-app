@@ -29,7 +29,7 @@ It's Movie App but slightly different 🔥
 
 ## 🌐 Demo Version 
 
-[HERE] 👈 (https://itsteatv-movie-app.vercel.app/)
+[HERE](https://itsteatv-movie-app.vercel.app/)
 
 
 ## 📸 Screenshots
